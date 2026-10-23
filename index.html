@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYNO | Penthauze Music Official Website (penthauze.com)</title>
+    <meta name="description" content="Official website of Phyno (Ezege 1) and Penthauze Music. Stream Full Time Job, explore the discography, PhynoFest tickets, label roster, and worldwide bookings.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Syne, Cinzel, and Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#09090b',
+                        charcoal: '#121216',
+                        surface: '#18181f',
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F59E0B',
+                            bright: '#FDE047',
+                            dark: '#997A15'
+                        }
+                    },
+                    fontFamily: {
+                        royal: ['Cinzel', 'serif'],
+                        display: ['Syne', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #FDE047 50%, #AA7C11 100%)',
+                        'dark-radial': 'radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.16) 0%, rgba(9, 9, 11, 1) 70%)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styling & Animations */
+        body {
+            background-color: #09090b;
+            color: #f4f4f5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Igbo Uli / Isiagu inspired geometric background pattern */
+        .isiagu-pattern {
+            background-image: 
+                radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+                linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px, 48px 48px, 48px 48px;
+        }
+
+        /* Gold metallic text effect */
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #FFF3B0 0%, #D4AF37 45%, #F59E0B 75%, #9A7B1C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism cards */
+        .glass-card {
+            background: rgba(24, 24, 31, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.18);
+        }
+
+        /* Equalizer Bar Animations */
+        @keyframes eq-bounce {
+            0%, 100% { height: 20%; }
+            50% { height: 95%; }
+        }
+        .eq-bar {
+            width: 4px;
+            background: linear-gradient(to top, #D4AF37, #FDE047);
+            border-radius: 9999px;
+            transition: height 0.2s ease;
+        }
+        .playing .eq-bar-1 { animation: eq-bounce 0.6s infinite ease-in-out 0.1s; }
+        .playing .eq-bar-2 { animation: eq-bounce 0.8s infinite ease-in-out 0.3s; }
+        .playing .eq-bar-3 { animation: eq-bounce 0.5s infinite ease-in-out 0.2s; }
+        .playing .eq-bar-4 { animation: eq-bounce 0.9s infinite ease-in-out 0.4s; }
+        .playing .eq-bar-5 { animation: eq-bounce 0.7s infinite ease-in-out 0.15s; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Vinyl Spin */
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-vinyl {
+            animation: spin-slow 12s linear infinite;
+            animation-play-state: paused;
+        }
+        .playing .spin-vinyl {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body class="isiagu-pattern selection:bg-gold selection:text-obsidian pb-28">
+
+    <!-- Top Announcement Bar for Domain Owner / Latest Drop -->
+    <div class="bg-gradient-to-r from-obsidian via-charcoal to-obsidian border-b border-gold/20 py-2 px-4 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gold text-obsidian uppercase tracking-wider">
+                    <i class="fa-solid fa-crown mr-1"></i> Official Hub
+                </span>
+                <span class="text-zinc-300 font-medium">Welcome to <strong class="text-gold">penthauze.com</strong> — Stream Phyno's 5th Studio Album <em>"Full Time Job"</em> Out Everywhere</span>
+            </div>
+            <button onclick="openHostingModal()" class="text-gold hover:text-gold-bright underline decoration-gold/50 font-semibold flex items-center gap-1 transition">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Host on penthauze.com for Free</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sticky Glassmorphism Navigation Bar -->
+    <header id="navbar" class="sticky top-0 z-40 glass-card border-b border-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gold-gradient p-[1.5px] shadow-lg shadow-gold/20 group-hover:scale-105 transition">
+                        <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center">
+                            <!-- Custom SVG Penthauze Crown Emblem -->
+                            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5ZM19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V18H19V19Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="font-royal font-black text-xl sm:text-2xl tracking-wider text-white">PHYNO</span>
+                            <span class="text-gold font-light">|</span>
+                            <span class="font-display font-bold text-xs sm:text-sm tracking-[0.2em] text-gold uppercase">Penthauze</span>
+                        </div>
+                        <p class="text-[10px] tracking-[0.25em] text-zinc-400 uppercase -mt-1">Ezege 1 • Official Portal</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold tracking-wide">
+                    <a href="#home" class="text-gold hover:text-gold-bright transition">Home</a>
+                    <a href="#discography" class="text-zinc-300 hover:text-gold transition">Music & Catalog</a>
+                    <a href="#penthauze" class="text-zinc-300 hover:text-gold transition">Penthauze Roster</a>
+                    <a href="#phynofest" class="text-zinc-300 hover:text-gold transition">PhynoFest & Tour</a>
+                    <a href="#bookings" class="text-zinc-300 hover:text-gold transition">Bookings & EPK</a>
+                </nav>
+
+                <!-- Action CTA Buttons -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <button onclick="togglePlayTrack(0)" class="px-5 py-2.5 rounded-xl bg-gold-gradient text-obsidian font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-gold/20 hover:brightness-110 active:scale-95 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-play"></i>
+                        <span>STREAM "FULL TIME JOB"</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl border border-gold/30 text-gold hover:bg-gold/10 transition">
+                    <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-gold/20 px-6 py-6 space-y-4">
+            <div class="flex flex-col space-y-3 font-display text-base">
+                <a href="#home" onclick="toggleMobileMenu()" class="py-2 text-gold border-b border-white/5">01. Home</a>
+                <a href="#discography" onclick="toggleMobileMenu()" class="py-2 text-zinc-200 hover:text-gold border-b border-white/5">02. Music & Discography</a>
+                <a href="#penthauze" onclick="toggleMobileMenu()" class="py-2 text-zinc-200 hover:text-gold border-b border-white/5">03. Penthauze Label Roster</a>
+                <a href="#phynofest" onclick="toggleMobileMenu()" class="py-2 text-zinc-200 hover:text-gold border-b border-white/5">04. PhynoFest & Live Tour</a>
+                <a href="#bookings" onclick="toggleMobileMenu()" class="py-2 text-zinc-200 hover:text-gold">05. Bookings & Press Kit</a>
+            </div>
+            <div class="pt-2 flex flex-col gap-2">
+                <button onclick="togglePlayTrack(0); toggleMobileMenu();" class="w-full py-3 rounded-xl bg-gold-gradient text-obsidian font-bold text-sm flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>PLAY FEATURED TRACKS</span>
+                </button>
+                <button onclick="openHostingModal(); toggleMobileMenu();" class="w-full py-2.5 rounded-xl border border-gold/40 text-gold font-semibold text-xs flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-server"></i>
+                    <span>How to Connect penthauze.com (Free)</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[88vh] flex items-center pt-8 pb-20 overflow-hidden bg-dark-radial">
+        <!-- Interactive Gold Particle Canvas Backdrop -->
+        <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none opacity-60"></canvas>
+
+        <!-- Decorative Ambient Glows -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-32 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Royal Afro-Rap Identity & CTAs -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full glass-card border-gold/40">
+                        <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+                        <span class="text-xs font-bold tracking-[0.2em] uppercase text-gold">EZEGE 1 • KING OF THE EAST • PENTHAUZE CEO</span>
+                    </div>
+
+                    <h1 class="font-royal font-black text-4xl sm:text-6xl xl:text-7xl leading-[1.06] tracking-tight">
+                        THE VOICE OF A <br>
+                        <span class="text-gold-metallic">GENERATION.</span>
+                    </h1>
+
+                    <p class="text-zinc-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+                        From pioneering indigenous Igbo rap across global arenas to building the powerhouse <strong class="text-white">Penthauze Music</strong> empire and shutting down stadiums with <strong class="text-gold">PhynoFest</strong>. Experience the official catalog of Chibuzor Nelson Azubuike (<span class="italic text-gold">Phyno Fino</span>).
+                    </p>
+
+                    <!-- Primary Hero Actions -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="togglePlayTrack(0)" class="px-7 py-4 rounded-2xl bg-gold-gradient text-obsidian font-extrabold text-sm sm:text-base tracking-wide shadow-xl shadow-gold/25 hover:scale-[1.02] active:scale-95 transition flex items-center space-x-3">
+                            <i id="hero-play-icon" class="fa-solid fa-play text-lg"></i>
+                            <span>LISTEN TO "FULL TIME JOB"</span>
+                        </button>
+                        <a href="#discography" class="px-6 py-4 rounded-2xl glass-card text-white hover:border-gold/60 hover:text-gold font-bold text-sm sm:text-base transition flex items-center space-x-2">
+                            <i class="fa-solid fa-compact-disc"></i>
+                            <span>EXPLORE DISCOGRAPHY</span>
+                        </a>
+                    </div>
+
+                    <!-- Direct Streaming Platform Badges -->
+                    <div class="pt-6 border-t border-white/10">
+                        <p class="text-xs uppercase tracking-[0.2em] text-zinc-400 mb-3 font-semibold">Stream Phyno On All Global Platforms</p>
+                        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                            <a href="https://open.spotify.com/artist/6acbdy69062359" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl glass-card hover:border-green-500/60 flex items-center space-x-2 text-xs font-semibold transition">
+                                <i class="fa-brands fa-spotify text-green-400 text-base"></i>
+                                <span>Spotify</span>
+                            </a>
+                            <a href="https://music.apple.com/ng/artist/phyno/578809580" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl glass-card hover:border-pink-500/60 flex items-center space-x-2 text-xs font-semibold transition">
+                                <i class="fa-brands fa-apple text-pink-400 text-base"></i>
+                                <span>Apple Music</span>
+                            </a>
+                            <a href="https://audiomack.com/phyno" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl glass-card hover:border-amber-500/60 flex items-center space-x-2 text-xs font-semibold transition">
+                                <i class="fa-solid fa-wave-square text-amber-400 text-sm"></i>
+                                <span>Audiomack</span>
+                            </a>
+                            <a href="https://www.boomplay.com/artists/1668" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl glass-card hover:border-cyan-400/60 flex items-center space-x-2 text-xs font-semibold transition">
+                                <i class="fa-solid fa-circle-play text-cyan-400 text-base"></i>
+                                <span>Boomplay</span>
+                            </a>
+                            <a href="https://www.youtube.com/@Phyno" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl glass-card hover:border-red-500/60 flex items-center space-x-2 text-xs font-semibold transition">
+                                <i class="fa-brands fa-youtube text-red-500 text-base"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Album Showcase & Audio Preview Deck -->
+                <div class="lg:col-span-5">
+                    <div id="hero-player-card" class="glass-card rounded-3xl p-6 sm:p-7 border border-gold/30 shadow-2xl relative overflow-hidden">
+                        <!-- Top Status Pill -->
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2.5 py-1 rounded-md bg-gold/20 text-gold font-bold text-[11px] uppercase tracking-wider">Featured Album</span>
+                                <span class="text-xs text-zinc-400">Penthauze Music</span>
+                            </div>
+                            <!-- Animated Equalizer Indicator -->
+                            <div id="hero-eq" class="flex items-end space-x-1 h-5">
+                                <div class="eq-bar eq-bar-1 h-2"></div>
+                                <div class="eq-bar eq-bar-2 h-4"></div>
+                                <div class="eq-bar eq-bar-3 h-3"></div>
+                                <div class="eq-bar eq-bar-4 h-5"></div>
+                                <div class="eq-bar eq-bar-5 h-2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Album Cover + Spinning Vinyl Visual -->
+                        <div class="relative flex items-center justify-center my-4">
+                            <div class="relative z-10 w-52 h-52 sm:w-60 sm:h-60 rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/40 bg-charcoal">
+                                <!-- Custom High-Impact SVG Artwork for FULL TIME JOB -->
+                                <svg viewBox="0 0 400 400" class="w-full h-full object-cover">
+                                    <defs>
+                                        <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#18181f"/>
+                                            <stop offset="50%" stop-color="#09090b"/>
+                                            <stop offset="100%" stop-color="#292008"/>
+                                        </linearGradient>
+                                        <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0%" stop-color="#FDE047"/>
+                                            <stop offset="50%" stop-color="#D4AF37"/>
+                                            <stop offset="100%" stop-color="#9A7B1C"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="400" height="400" fill="url(#bgGrad)"/>
+                                    <circle cx="200" cy="200" r="155" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.45"/>
+                                    <circle cx="200" cy="200" r="120" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.7"/>
+                                    <!-- Crown & Ezege Motif -->
+                                    <path d="M135 175 L115 110 L165 145 L200 95 L235 145 L285 110 L265 175 Z" fill="url(#goldGrad)"/>
+                                    <text x="200" y="235" text-anchor="middle" fill="#FFFFFF" font-family="Cinzel, serif" font-weight="900" font-size="38" letter-spacing="6">PHYNO</text>
+                                    <text x="200" y="275" text-anchor="middle" fill="url(#goldGrad)" font-family="Syne, sans-serif" font-weight="800" font-size="20" letter-spacing="4">FULL TIME JOB</text>
+                                    <text x="200" y="345" text-anchor="middle" fill="#a1a1aa" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="11" letter-spacing="5">PENTHAUZE MUSIC</text>
+                                </svg>
+                            </div>
+                            <!-- Peeking Gold Vinyl Record -->
+                            <div class="spin-vinyl -ml-16 w-48 h-48 sm:w-52 sm:h-52 rounded-full bg-gradient-to-tr from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-gold/40 shadow-2xl flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-gold-gradient flex items-center justify-center border-2 border-obsidian">
+                                    <div class="w-4 h-4 rounded-full bg-obsidian"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Tracklist Preview Selector -->
+                        <div class="mt-5 space-y-2">
+                            <div class="flex items-center justify-between text-xs text-zinc-400 pb-1 border-b border-white/10">
+                                <span>CLICK ANY TRACK FOR INSTant BEAT PREVIEW</span>
+                                <span id="synth-status" class="text-gold font-semibold">WebAudio Ready</span>
+                            </div>
+
+                            <div id="hero-tracklist" class="space-y-1.5 max-h-52 overflow-y-auto pr-1">
+                                <!-- Populated dynamically via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Live Impact Metrics Strip -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-gold">
+                    <p class="text-2xl sm:text-3xl font-display font-extrabold text-white">1.5B+</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Career Global Streams</p>
+                </div>
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-gold">
+                    <p class="text-2xl sm:text-3xl font-display font-extrabold text-gold">6+</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Acclaimed Projects & Albums</p>
+                </div>
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-gold">
+                    <p class="text-2xl sm:text-3xl font-display font-extrabold text-white">50,000+</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-400 mt-1">PhynoFest Stadium Attendance</p>
+                </div>
+                <div class="glass-card rounded-2xl p-5 border-l-4 border-l-gold">
+                    <p class="text-2xl sm:text-3xl font-display font-extrabold text-gold">EST. 2012</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Penthauze Music Dynasty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE DISCOGRAPHY & CATALOG SECTION -->
+    <section id="discography" class="py-20 bg-charcoal/60 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header + Filter Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold block mb-2">THE ROYAL CATALOG</span>
+                    <h2 class="font-royal font-black text-3xl sm:text-5xl text-white">ICONIC <span class="text-gold-metallic">DISCOGRAPHY</span></h2>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap gap-2" id="album-filters">
+                    <button onclick="filterAlbums('all')" data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-gold text-obsidian transition">
+                        All Projects (6)
+                    </button>
+                    <button onclick="filterAlbums('solo')" data-filter="solo" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-zinc-300 hover:text-gold transition">
+                        Solo Studio Albums
+                    </button>
+                    <button onclick="filterAlbums('collab')" data-filter="collab" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-zinc-300 hover:text-gold transition">
+                        Joint Album (2 Kings)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Albums Grid (Populated via JS) -->
+            <div id="albums-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PENTHAUZE MUSIC LABEL SHOWCASE (penthauze.com Hub) -->
+    <section id="penthauze" class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-gold/30 mb-14 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+                    <i class="fa-solid fa-crown text-[220px] text-gold"></i>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold/15 text-gold text-xs font-bold uppercase tracking-widest">
+                            <span>penthauze.com Official Imprint</span>
+                        </div>
+                        <h2 class="font-royal font-black text-3xl sm:text-5xl text-white">
+                            PENTHAUZE <span class="text-gold-metallic">MUSIC EMPIRE</span>
+                        </h2>
+                        <p class="text-zinc-300 text-base sm:text-lg leading-relaxed">
+                            Founded by Phyno, <strong class="text-white">Penthauze Music</strong> is one of Africa’s premier independent record labels, talent incubators, and audio production houses. From chart-topping street anthems to multi-platinum global records like <em>"Zoom"</em> and <em>"Do I"</em>, Penthauze champions authentic Eastern Nigerian sound with world-class sonic engineering.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+                        <a href="#bookings" class="px-6 py-4 rounded-2xl bg-gold-gradient text-obsidian font-extrabold text-sm text-center shadow-lg hover:brightness-110 transition">
+                            SUBMIT DEMO / LABEL INQUIRY
+                        </a>
+                        <button onclick="openEpkModal()" class="px-6 py-3.5 rounded-2xl glass-card text-gold hover:border-gold font-bold text-sm text-center transition">
+                            VIEW LABEL CREDENTIALS & EPK
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roster & Affiliates Cards -->
+            <div class="mb-6 flex items-center justify-between">
+                <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Penthauze Roster, Alumni & Affiliates</h3>
+                <span class="text-xs text-gold uppercase tracking-widest font-semibold">Enugu • Awka • Lagos • Global</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Artist 1: Phyno -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-amber-500/20 via-obsidian to-charcoal border border-gold/30 flex flex-col items-center justify-center mb-5 relative overflow-hidden">
+                            <i class="fa-solid fa-crown text-4xl text-gold mb-2"></i>
+                            <span class="font-royal font-bold text-lg text-white tracking-widest">EZEGE 1</span>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-gold text-obsidian font-bold text-[10px] uppercase">Founder & CEO</span>
+                        </div>
+                        <h4 class="font-display font-bold text-xl text-white">Phyno</h4>
+                        <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-3">Rapper • Record Producer • CEO</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            The architect of modern Igbo rap and executive producer behind Penthauze's signature sound.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-zinc-400">Key Hit: <strong class="text-white">Do I / Fada Fada</strong></span>
+                        <button onclick="togglePlayTrack(0)" class="text-gold hover:underline font-bold"><i class="fa-solid fa-play mr-1"></i>Play</button>
+                    </div>
+                </div>
+
+                <!-- Artist 2: Superboy Cheque -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-purple-500/20 via-obsidian to-charcoal border border-white/10 flex flex-col items-center justify-center mb-5 relative">
+                            <i class="fa-solid fa-bolt text-4xl text-amber-400 mb-2"></i>
+                            <span class="font-display font-bold text-lg text-white tracking-widest">SUPERBOY</span>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-white/10 text-zinc-200 font-bold text-[10px] uppercase">Flagship Star</span>
+                        </div>
+                        <h4 class="font-display font-bold text-xl text-white">Cheque</h4>
+                        <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-3">Afro-Trap & Melodic Vocalist</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Multi-platinum Penthauze breakout sensation known for global smash hits <em>"Zoom"</em>, <em>"History"</em> (with Fireboy DML), and <em>"Call Me Baby"</em>.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-zinc-400">Anthem: <strong class="text-white">Zoom / Shine</strong></span>
+                        <a href="#discography" class="text-gold hover:underline font-bold">Explore</a>
+                    </div>
+                </div>
+
+                <!-- Artist 3: Rhatti -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-emerald-500/20 via-obsidian to-charcoal border border-white/10 flex flex-col items-center justify-center mb-5 relative">
+                            <i class="fa-solid fa-microphone-lines text-4xl text-gold mb-2"></i>
+                            <span class="font-display font-bold text-lg text-white tracking-widest">RHATTI</span>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-white/10 text-zinc-200 font-bold text-[10px] uppercase">Affiliate</span>
+                        </div>
+                        <h4 class="font-display font-bold text-xl text-white">Rhatti</h4>
+                        <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-3">Afro-Fusion & Rap</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Versatile flow master and dynamic performer delivering rapid-fire cadence and street-certified melodies on Penthauze posse cuts.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-zinc-400">Standout: <strong class="text-white">Biko / Nyem Space</strong></span>
+                        <a href="#bookings" class="text-gold hover:underline font-bold">Book</a>
+                    </div>
+                </div>
+
+                <!-- Artist 4: Nuno Zigi -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-44 rounded-xl bg-gradient-to-br from-red-500/20 via-obsidian to-charcoal border border-white/10 flex flex-col items-center justify-center mb-5 relative">
+                            <i class="fa-solid fa-fire-flame-curved text-4xl text-amber-500 mb-2"></i>
+                            <span class="font-display font-bold text-lg text-white tracking-widest">NUNO ZIGI</span>
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-white/10 text-zinc-200 font-bold text-[10px] uppercase">Lyricist</span>
+                        </div>
+                        <h4 class="font-display font-bold text-xl text-white">Nuno Zigi</h4>
+                        <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-3">Indigenous Lyricist</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Carrying the torch of sharp Igbo wordplay and uncompromising boom-bap & drill storytelling alongside Phyno.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-zinc-400">Collab: <strong class="text-white"> Nyem Space</strong></span>
+                        <a href="#bookings" class="text-gold hover:underline font-bold">Inquire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHYNOFEST & LIVE TOUR SECTION -->
+    <section id="phynofest" class="py-20 bg-charcoal/80 border-y border-gold/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- PhynoFest Cultural Phenomenon Highlight -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+                        <span>Africa's Biggest Artist-Led Stadium Festival</span>
+                    </div>
+                    <h2 class="font-royal font-black text-3xl sm:text-5xl text-white leading-tight">
+                        PHYNOFEST <br>
+                        <span class="text-gold-metallic">SHUTDOWN</span>
+                    </h2>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                        From packed 50,000+ capacity nights at <strong class="text-white">Nnamdi Azikiwe Stadium (Enugu)</strong> and <strong class="text-white">Chuba Ikpeazu Stadium (Onitsha)</strong> to international arenas across London, Toronto, and Houston—Phyno's live experience brings out the entire industry and electrifies the East.
+                    </p>
+
+                    <div class="glass-card rounded-2xl p-5 space-y-3 border-gold/30">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-widest text-gold font-bold">PhynoFest VIP & Early Bird List</span>
+                            <span class="text-xs text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Priority Access</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Get instant SMS/Email alerts when PhynoFest dates, tables, and early-bird wristbands drop on <strong>penthauze.com</strong>.</p>
+                        <form onsubmit="handleRsvpSubmit(event)" class="flex gap-2">
+                            <input type="email" id="rsvp-email" required placeholder="Enter your email for VIP alerts..." class="flex-1 px-4 py-2.5 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-gold">
+                            <button type="submit" class="px-5 py-2.5 rounded-xl bg-gold-gradient text-obsidian font-bold text-xs uppercase tracking-wider hover:brightness-110 transition">
+                                Join List
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Interactive Tour & Festival Dates List -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-display font-bold text-xl text-white">Upcoming Live Dates & Festival Appearances</h3>
+                        <span class="text-xs text-zinc-400">2026 / 2027 Season</span>
+                    </div>
+
+                    <!-- Event Row 1 -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-gold">
+                        <div class="flex items-start sm:items-center gap-4">
+                            <div class="w-16 h-16 rounded-xl bg-gold/15 border border-gold/40 flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold text-gold uppercase">DEC</span>
+                                <span class="text-xl font-display font-black text-white">20</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded bg-gold text-obsidian font-extrabold text-[10px] uppercase">Flagship Homecoming</span>
+                                    <span class="text-xs text-zinc-400">Enugu, Nigeria</span>
+                                </div>
+                                <h4 class="font-display font-bold text-lg text-white mt-1">PHYNOFEST: THE COAL CITY SHUTDOWN</h4>
+                                <p class="text-xs text-zinc-400"><i class="fa-solid fa-location-dot text-gold mr-1"></i>Nnamdi Azikiwe Stadium, Enugu</p>
+                            </div>
+                        </div>
+                        <button onclick="openTicketModal('PHYNOFEST: The Coal City Shutdown (Enugu)')" class="px-5 py-2.5 rounded-xl bg-gold-gradient text-obsidian font-bold text-xs uppercase tracking-wider shrink-0 hover:brightness-110 transition">
+                            RSVP / VIP Tables
+                        </button>
+                    </div>
+
+                    <!-- Event Row 2 -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-start sm:items-center gap-4">
+                            <div class="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold text-gold uppercase">DEC</span>
+                                <span class="text-xl font-display font-black text-white">27</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded bg-white/10 text-zinc-200 font-bold text-[10px] uppercase">Detty December Live</span>
+                                    <span class="text-xs text-zinc-400">Lagos, Nigeria</span>
+                                </div>
+                                <h4 class="font-display font-bold text-lg text-white mt-1">EZEGE LIVE IN CONCERT (EKO HOTEL)</h4>
+                                <p class="text-xs text-zinc-400"><i class="fa-solid fa-location-dot text-gold mr-1"></i>Eko Convention Centre, Victoria Island</p>
+                            </div>
+                        </div>
+                        <button onclick="openTicketModal('Ezege Live in Concert (Lagos)')" class="px-5 py-2.5 rounded-xl border border-gold/50 text-gold hover:bg-gold hover:text-obsidian font-bold text-xs uppercase tracking-wider shrink-0 transition">
+                            Reserve Tickets
+                        </button>
+                    </div>
+
+                    <!-- Event Row 3 -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-start sm:items-center gap-4">
+                            <div class="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold text-gold uppercase">JAN</span>
+                                <span class="text-xl font-display font-black text-white">01</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded bg-white/10 text-zinc-200 font-bold text-[10px] uppercase">New Year Shutdown</span>
+                                    <span class="text-xs text-zinc-400">Onitsha / Awka, Anambra</span>
+                                </div>
+                                <h4 class="font-display font-bold text-lg text-white mt-1">ALOBAM NEW YEAR FESTIVAL</h4>
+                                <p class="text-xs text-zinc-400"><i class="fa-solid fa-location-dot text-gold mr-1"></i>Chuba Ikpeazu Stadium, Onitsha</p>
+                            </div>
+                        </div>
+                        <button onclick="openTicketModal('Alobam New Year Festival (Onitsha)')" class="px-5 py-2.5 rounded-xl border border-gold/50 text-gold hover:bg-gold hover:text-obsidian font-bold text-xs uppercase tracking-wider shrink-0 transition">
+                            Reserve Tickets
+                        </button>
+                    </div>
+
+                    <!-- Event Row 4 -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-start sm:items-center gap-4">
+                            <div class="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs font-bold text-gold uppercase">MAR</span>
+                                <span class="text-xl font-display font-black text-white">14</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] uppercase">UK Tour</span>
+                                    <span class="text-xs text-zinc-400">London, United Kingdom</span>
+                                </div>
+                                <h4 class="font-display font-bold text-lg text-white mt-1">FULL TIME JOB WORLD TOUR — LONDON</h4>
+                                <p class="text-xs text-zinc-400"><i class="fa-solid fa-location-dot text-gold mr-1"></i>OVO Arena Wembley / Indigo at The O2</p>
+                            </div>
+                        </div>
+                        <button onclick="openTicketModal('Full Time Job World Tour (London UK)')" class="px-5 py-2.5 rounded-xl border border-gold/50 text-gold hover:bg-gold hover:text-obsidian font-bold text-xs uppercase tracking-wider shrink-0 transition">
+                            Pre-Register
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKINGS, BRAND PARTNERSHIPS & ELECTRONIC PRESS KIT (EPK) -->
+    <section id="bookings" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Column: Direct Management & EPK Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold block">WORLDWIDE REPRESENTATION</span>
+                    <h2 class="font-royal font-black text-3xl sm:text-5xl text-white">BOOKINGS & <span class="text-gold-metallic">MANAGEMENT</span></h2>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                        For festival headlines, concert bookings, corporate brand ambassadorships, feature verses, and Penthauze Music licensing, reach out directly to the official management desk.
+                    </p>
+
+                    <!-- Direct Contact Cards -->
+                    <div class="space-y-3">
+                        <div class="glass-card rounded-2xl p-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-400">Official Bookings & Management Email</p>
+                                    <p id="booking-email-text" class="text-sm font-bold text-white">bookings@penthauze.com</p>
+                                </div>
+                            </div>
+                            <button onclick="copyText('bookings@penthauze.com', 'Email address copied!')" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-gold/20 text-gold text-xs font-semibold transition">
+                                <i class="fa-regular fa-copy mr-1"></i>Copy
+                            </button>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center">
+                                    <i class="fa-solid fa-compact-disc"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-zinc-400">Press, Sync Licensing & Label Desk</p>
+                                    <p class="text-sm font-bold text-white">press@penthauze.com</p>
+                                </div>
+                            </div>
+                            <button onclick="copyText('press@penthauze.com', 'Press email copied!')" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-gold/20 text-gold text-xs font-semibold transition">
+                                <i class="fa-regular fa-copy mr-1"></i>Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Electronic Press Kit (EPK) Box -->
+                    <div class="glass-card rounded-2xl p-6 border border-gold/40 bg-gradient-to-br from-gold/10 to-transparent">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold"><i class="fa-solid fa-folder-open mr-1.5"></i>Electronic Press Kit (EPK)</span>
+                            <span class="text-[11px] text-zinc-400">Updated 2026</span>
+                        </div>
+                        <p class="text-xs text-zinc-300 mb-4 leading-relaxed">
+                            Includes official high-res press photos, Penthauze vector logos, stage plot & technical rider, biography, and verified streaming milestones.
+                        </p>
+                        <button onclick="openEpkModal()" class="w-full py-3 rounded-xl bg-white text-obsidian font-extrabold text-xs uppercase tracking-wider hover:bg-gold transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>OPEN INTERACTIVE EPK & TECH RIDER</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Booking Inquiry Form (Static-Host Ready) -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-3xl p-6 sm:p-9 border border-gold/25">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Send an Official Inquiry</h3>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-400 text-xs font-semibold">Direct to Penthauze Desk</span>
+                        </div>
+
+                        <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Your Full Name / Agency *</label>
+                                    <input type="text" id="book-name" required placeholder="e.g. Chinedu Okafor / LiveNation" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-gold transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Official Email Address *</label>
+                                    <input type="email" id="book-email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-gold transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Inquiry Category *</label>
+                                    <select id="book-type" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-gold transition">
+                                        <option value="Festival / Concert Headline Booking">Festival / Concert Headline Booking</option>
+                                        <option value="Brand Ambassadorship / Endorsement">Brand Ambassadorship / Endorsement</option>
+                                        <option value="Feature Verse / Studio Collaboration">Feature Verse / Studio Collaboration</option>
+                                        <option value="Penthauze Artist Booking (Cheque / Roster)">Penthauze Roster Booking</option>
+                                        <option value="Press / Sync Licensing Inquiry">Press / Sync Licensing Inquiry</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Event Date & City / Location</label>
+                                    <input type="text" id="book-location" placeholder="e.g. Dec 2026 — Enugu / London" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-gold transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Event Details, Budget Range & Proposal *</label>
+                                <textarea id="book-message" rows="4" required placeholder="Share venue capacity, proposed performance fee range, technical availability, and schedule..." class="w-full px-4 py-3 rounded-xl bg-obsidian border border-white/15 text-sm text-white focus:outline-none focus:border-gold transition"></textarea>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                                <p class="text-[11px] text-zinc-400">
+                                    <i class="fa-solid fa-shield-halved text-gold mr-1"></i>Ready for Web3Forms / Formspree or direct mailto dispatch on <strong>penthauze.com</strong>.
+                                </p>
+                                <button type="submit" class="px-8 py-4 rounded-xl bg-gold-gradient text-obsidian font-extrabold text-sm uppercase tracking-wider shadow-lg shadow-gold/20 hover:brightness-110 active:scale-95 transition">
+                                    SUBMIT INQUIRY
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH FREE CUSTOM DOMAIN DEPLOYMENT GUIDE TRIGGER -->
+    <footer class="bg-obsidian border-t border-gold/20 pt-14 pb-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-lg bg-gold-gradient flex items-center justify-center text-obsidian font-black">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <span class="font-royal font-black text-xl text-white tracking-wider">PHYNO <span class="text-gold">| PENTHAUZE</span></span>
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed max-w-sm">
+                        Official digital home of Chibuzor Nelson Azubuike (Phyno) and Penthauze Music (`penthauze.com`). Celebrating indigenous African excellence, royal soundscapes, and global culture.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-1">
+                        <a href="https://instagram.com/phynofino" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-zinc-300 hover:text-gold hover:border-gold transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/phynofino" target="_blank" rel="noopener noreferrer" aria-label="X Twitter" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-zinc-300 hover:text-gold hover:border-gold transition">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://youtube.com/@Phyno" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-zinc-300 hover:text-gold hover:border-gold transition">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com/@phynofino" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="w-9 h-9 rounded-lg glass-card flex items-center justify-center text-zinc-300 hover:text-gold hover:border-gold transition">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-2.5">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gold">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-zinc-400">
+                        <li><a href="#home" class="hover:text-white transition">Home & Featured Player</a></li>
+                        <li><a href="#discography" class="hover:text-white transition">Albums & Discography</a></li>
+                        <li><a href="#penthauze" class="hover:text-white transition">Penthauze Music Roster</a></li>
+                        <li><a href="#phynofest" class="hover:text-white transition">PhynoFest & Tour Dates</a></li>
+                        <li><a href="#bookings" class="hover:text-white transition">Bookings & Press Kit</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gold">Webmaster: Connect penthauze.com</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Own <strong class="text-white">penthauze.com</strong>? Host this single-file website for <strong>$0/month forever</strong> with free SSL on Cloudflare Pages, Vercel, or GitHub Pages.
+                    </p>
+                    <button onclick="openHostingModal()" class="w-full py-2.5 px-4 rounded-xl border border-gold/50 bg-gold/10 text-gold hover:bg-gold hover:text-obsidian font-bold text-xs transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <span>OPEN FREE HOSTING & DNS SETUP GUIDE</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+                <p>© <span id="year">2026</span> Penthauze Music LLC (`penthauze.com`). All Rights Reserved.</p>
+                <p class="text-zinc-400">Designed for Ezege 1 • Built for 100% Free Static Cloud Deployment</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PERSISTENT BOTTOM AUDIO PLAYER BAR -->
+    <div id="bottom-player" class="fixed bottom-0 inset-x-0 z-50 glass-card border-t border-gold/40 px-4 py-3 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            
+            <!-- Currently Playing Info -->
+            <div class="flex items-center space-x-3 min-w-0 flex-1">
+                <div class="w-11 h-11 rounded-xl bg-gold-gradient p-0.5 shrink-0">
+                    <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center text-gold">
+                        <i id="player-disc-icon" class="fa-solid fa-compact-disc text-lg"></i>
+                    </div>
+                </div>
+                <div class="truncate">
+                    <div class="flex items-center space-x-2">
+                        <p id="now-playing-title" class="text-xs sm:text-sm font-bold text-white truncate">Do I (Remix) ft. Burna Boy</p>
+                        <span class="hidden sm:inline-block px-1.5 py-0.5 rounded bg-gold/20 text-gold text-[10px] font-bold">SYNTH PREVIEW</span>
+                    </div>
+                    <p id="now-playing-album" class="text-[11px] text-zinc-400 truncate">Phyno • Full Time Job (Penthauze Music)</p>
+                </div>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="flex items-center space-x-3 sm:space-x-5">
+                <button onclick="prevTrack()" aria-label="Previous Track" class="text-zinc-400 hover:text-white transition">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button onclick="toggleCurrentAudio()" id="bottom-play-btn" aria-label="Play or Pause" class="w-10 h-10 rounded-full bg-gold-gradient text-obsidian flex items-center justify-center shadow-lg hover:scale-105 transition">
+                    <i id="bottom-play-icon" class="fa-solid fa-play text-sm"></i>
+                </button>
+                <button onclick="nextTrack()" aria-label="Next Track" class="text-zinc-400 hover:text-white transition">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+
+            <!-- Tempo / Beat Visualizer & Streaming Quick Link -->
+            <div class="hidden md:flex items-center space-x-4 flex-1 justify-end">
+                <div class="flex items-center space-x-2 text-xs text-zinc-400">
+                    <span>Afro-Rap Synth Engine:</span>
+                    <span id="bpm-badge" class="text-gold font-mono font-bold">108 BPM</span>
+                </div>
+                <a id="external-stream-link" href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-gold hover:text-obsidian text-xs font-bold transition flex items-center space-x-1.5">
+                    <i class="fa-brands fa-spotify"></i>
+                    <span>Full Song</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 1: ALBUM TRACKLIST & STREAMING DRAWER -->
+    <div id="album-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-gold/40 max-h-[88vh] overflow-y-auto relative">
+            <button onclick="closeAlbumModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-obsidian flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="album-modal-content">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: FREE HOSTING & DNS GUIDE FOR PENTHAUZE.COM -->
+    <div id="hosting-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl max-w-3xl w-full p-6 sm:p-8 border border-gold/50 max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeHostingModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-obsidian flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-6">
+                <div>
+                    <span class="px-2.5 py-1 rounded bg-gold text-obsidian font-extrabold text-[10px] uppercase tracking-wider">Zero-Cost Production Deployment</span>
+                    <h3 class="font-royal font-black text-2xl sm:text-3xl text-white mt-2">How to Host <span class="text-gold">penthauze.com</span> for Free</h3>
+                    <p class="text-xs sm:text-sm text-zinc-300 mt-1">
+                        Because this entire website is self-contained inside a single <code class="text-gold">index.html</code> file, you never need to pay for expensive monthly web hosting. Choose any of the 3 enterprise-grade free hosts below:
+                    </p>
+                </div>
+
+                <!-- 3 Free Hosting Options -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-2xl bg-obsidian/90 border border-gold/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-display font-bold text-white">1. Cloudflare Pages</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">Fastest in Nigeria</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Unlimited bandwidth, free global CDN, and automatic DDoS protection for high PhynoFest traffic spikes.</p>
+                        <ol class="text-xs text-zinc-300 list-decimal list-inside space-y-1 pt-1">
+                            <li>Save this file as <code class="text-gold">index.html</code></li>
+                            <li>Go to <strong>pages.cloudflare.com</strong></li>
+                            <li>Click <strong>Upload Assets</strong> (Drag & drop folder)</li>
+                            <li>Add custom domain <code class="text-gold">penthauze.com</code></li>
+                        </ol>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-obsidian/90 border border-white/10 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-display font-bold text-white">2. Vercel / Netlify</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/10 text-zinc-300 font-bold">1-Click Drag & Drop</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Instant deployments with free automatic HTTPS SSL certificates.</p>
+                        <ol class="text-xs text-zinc-300 list-decimal list-inside space-y-1 pt-1">
+                            <li>Put <code class="text-gold">index.html</code> in a folder</li>
+                            <li>Drag folder to <strong>app.netlify.com/drop</strong> or Vercel</li>
+                            <li>Open <strong>Domain Settings</strong> → Add <code class="text-gold">penthauze.com</code></li>
+                        </ol>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-obsidian/90 border border-white/10 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-display font-bold text-white">3. GitHub Pages</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/10 text-zinc-300 font-bold">100% Free Forever</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Host directly from a free GitHub repository.</p>
+                        <ol class="text-xs text-zinc-300 list-decimal list-inside space-y-1 pt-1">
+                            <li>Create repo <code class="text-gold">penthauze-web</code></li>
+                            <li>Upload <code class="text-gold">index.html</code></li>
+                            <li>Settings → Pages → Custom domain: <code class="text-gold">penthauze.com</code></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Copyable DNS Records Table -->
+                <div class="p-4 rounded-2xl bg-obsidian border border-white/10 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gold">Exact DNS Records for Your Domain Registrar (Namecheap / GoDaddy / Cloudflare)</h4>
+                        <button onclick="copyText('A @ 76.76.21.21 | CNAME www cname.vercel-dns.com', 'DNS Records copied to clipboard!')" class="text-xs text-gold hover:underline font-bold">
+                            <i class="fa-regular fa-copy mr-1"></i>Copy Vercel DNS
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-zinc-300">
+                            <thead class="text-zinc-500 border-b border-white/10">
+                                <tr>
+                                    <th class="py-2">Provider</th>
+                                    <th class="py-2">Record Type</th>
+                                    <th class="py-2">Host / Name</th>
+                                    <th class="py-2">Value / Target</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5 font-mono text-[11px]">
+                                <tr>
+                                    <td class="py-2 text-white font-sans font-semibold">Vercel</td>
+                                    <td class="py-2 text-gold">A</td>
+                                    <td class="py-2">@</td>
+                                    <td class="py-2">76.76.21.21</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-sans font-semibold">Vercel (www)</td>
+                                    <td class="py-2 text-gold">CNAME</td>
+                                    <td class="py-2">www</td>
+                                    <td class="py-2">cname.vercel-dns.com</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 text-white font-sans font-semibold">GitHub Pages</td>
+                                    <td class="py-2 text-gold">A</td>
+                                    <td class="py-2">@</td>
+                                    <td class="py-2">185.199.108.153</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button onclick="closeHostingModal()" class="px-6 py-2.5 rounded-xl bg-gold-gradient text-obsidian font-bold text-xs uppercase tracking-wider">
+                        Got It, Let's Go!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ELECTRONIC PRESS KIT (EPK) & TECH RIDER -->
+    <div id="epk-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-gold/40 max-h-[88vh] overflow-y-auto relative">
+            <button onclick="closeEpkModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-obsidian flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="text-xs font-bold uppercase tracking-widest text-gold">Official Electronic Press Kit</span>
+            <h3 class="font-royal font-black text-2xl sm:text-3xl text-white mt-1">PHYNO (EZEGE 1) • PRESS & BIO</h3>
+            <p class="text-xs text-zinc-300 mt-3 leading-relaxed">
+                <strong>Chibuzor Nelson Azubuike</strong> (born October 9, 1986), better known as <strong>Phyno</strong>, is a Nigerian rapper, singer, songwriter, record producer, and founder of <strong>Penthauze Music</strong>. Renowned for rapping primarily in the Igbo language blended with Nigerian Pidgin and English, Phyno transformed indigenous rap into a mainstream continental movement across Africa.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5">
+                <div class="p-3 rounded-xl bg-obsidian border border-white/10">
+                    <p class="text-[11px] text-zinc-400">Hometown / Roots</p>
+                    <p class="text-xs font-bold text-white mt-0.5">Anambra / Enugu State</p>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian border border-white/10">
+                    <p class="text-[11px] text-zinc-400">Record Label</p>
+                    <p class="text-xs font-bold text-gold mt-0.5">Penthauze Music</p>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian border border-white/10">
+                    <p class="text-[11px] text-zinc-400">Live Setup</p>
+                    <p class="text-xs font-bold text-white mt-0.5">Full Live Band + DJ</p>
+                </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-obsidian border border-gold/20 space-y-2 text-xs">
+                <p class="font-bold text-gold uppercase tracking-wider">Stage & Hospitality Rider Summary</p>
+                <p class="text-zinc-300">• 2x Shure Axient Digital Wireless Microphones + Full In-Ear Monitor (IEM) Mix</p>
+                <p class="text-zinc-300">• International Travel: Business Class for Principal Artist + Management Crew</p>
+                <p class="text-zinc-300">• Security: Dedicated VIP fleet and venue perimeter security required</p>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3 justify-end">
+                <button onclick="copyText('Phyno Official Press Bio & Rider — bookings@penthauze.com | https://penthauze.com', 'EPK Summary Copied!')" class="px-5 py-2.5 rounded-xl border border-gold/40 text-gold text-xs font-bold">
+                    Copy Press Bio Summary
+                </button>
+                <button onclick="closeEpkModal(); document.getElementById('bookings').scrollIntoView({behavior:'smooth'});" class="px-5 py-2.5 rounded-xl bg-gold-gradient text-obsidian text-xs font-extrabold">
+                    Request Full Rider Package
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM TOAST NOTIFICATION BOX (NO ALERT()) -->
+    <div id="toast" class="fixed top-24 right-5 z-50 hidden transform transition-all duration-300">
+        <div class="glass-card border-l-4 border-l-gold px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3">
+            <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+            <span id="toast-message" class="text-xs sm:text-sm font-semibold text-white">Action completed!</span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT: DATA, WEB AUDIO SYNTH BEAT ENGINE & INTERACTIVITY -->
+    <script>
+        // 1. FEATURED TRACKS DATA (With Web Audio API Afro-Rap Synth Parameters)
+        const featuredTracks = [
+            {
+                id: 0,
+                title: "Do I (Remix) ft. Burna Boy",
+                album: "Full Time Job",
+                duration: "3:14",
+                bpm: 108,
+                notes: [110, 130.81, 146.83, 164.81, 146.83, 130.81],
+                spotify: "https://open.spotify.com/artist/6acbdy69062359"
+            },
+            {
+                id: 1,
+                title: "Back Outside ft. Cheque",
+                album: "Full Time Job (2024)",
+                duration: "2:58",
+                bpm: 114,
+                notes: [146.83, 174.61, 196.00, 220.00, 196.00, 174.61],
+                spotify: "https://open.spotify.com/artist/6acbdy69062359"
+            },
+            {
+                id: 2,
+                title: "Time of My Life ft. ArrDee",
+                album: "Full Time Job (2024)",
+                duration: "2:49",
+                bpm: 122,
+                notes: [130.81, 164.81, 196.00, 246.94, 196.00, 164.81],
+                spotify: "https://open.spotify.com/artist/6acbdy69062359"
+            },
+            {
+                id: 3,
+                title: "Fada Fada (Ghetto Gospel) ft. Olamide",
+                album: "The Playmaker (Classic)",
+                duration: "4:28",
+                bpm: 104,
+                notes: [164.81, 196.00, 220.00, 246.94, 220.00, 196.00],
+                spotify: "https://open.spotify.com/artist/6acbdy69062359"
+            },
+            {
+                id: 4,
+                title: "Alobam (Eastern Street Anthem)",
+                album: "No Guts No Glory",
+                duration: "3:52",
+                bpm: 96,
+                notes: [98.00, 110.00, 130.81, 146.83, 110.00, 98.00],
+                spotify: "https://open.spotify.com/artist/6acbdy69062359"
+            },
+            {
+                id: 5,
+                title: "Highway ft. DJ Kaywise",
+                album: "Something to Live For",
+                duration: "3:36",
+                bpm: 116,
+                notes: [123.47, 146.83, 185.00, 220.00, 185.00, 146.83],
+                spotify: "https://open.spotify.com/artist/6acbdy69062359"
+            }
+        ];
+
+        // 2. COMPLETE DISCOGRAPHY DATA
+        const albumsData = [
+            {
+                id: "full-time-job",
+                title: "Full Time Job",
+                year: "2024",
+                category: "solo",
+                badge: "5th Studio Album",
+                accent: "from-amber-500/30 via-obsidian to-charcoal",
+                description: "A triumphant 15-track testament to longevity, luxury, and lyrical mastery featuring Burna Boy, Cheque, Chip, ArrDee, Johnny Drille, and Flavour.",
+                tracks: ["It's Nothing", "Back Outside (ft. Cheque)", "Eyes On Dem (ft. Chip)", "Do I", "Deep (ft. Fave)", "Time of My Life (ft. ArrDee)", "Grateful", "Nwoke Esike (ft. Flavour)", "Trouble Maker", "Men Don Show Face (ft. Flavour)"]
+            },
+            {
+                id: "something-to-live-for",
+                title: "Something to Live For",
+                year: "2021",
+                category: "solo",
+                badge: "4th Studio Album",
+                accent: "from-yellow-600/30 via-obsidian to-charcoal",
+                description: "Rich highlife orchestration blended with razor-sharp indigenous rap featuring The Cavemen., Olamide, Peruzzi, D Smoke, and Jay Teazer.",
+                tracks: ["Chizoba (ft. The Cavemen.)", "Stacks", "Bia", "Ghetto Love", "Winner", "All I See (ft. Duncan Mighty)", "Do You Wrong (ft. Olamide)", "Love Me Right (ft. JDes)", "Belong To You (ft. Peruzzi)", "Ikepentecost"]
+            },
+            {
+                id: "deal-with-it",
+                title: "Deal With It",
+                year: "2019",
+                category: "solo",
+                badge: "3rd Studio Album",
+                accent: "from-orange-500/25 via-obsidian to-charcoal",
+                description: "Cross-continental hits uniting East, West, and Global sounds with Davido, Don Jazzy, Olamide, Falz, Runtown, Teni, and Cheque.",
+                tracks: ["The Bag", "Ride For You (ft. Davido)", "blessings (ft. Don Jazzy & Olamide)", "Agu", "Body", "Ka Anyi Na Ayo (ft. Teni)", "Vibe (ft. Flavour)", "Recognize (ft. Cheque)", "Uwam (ft. Harmonize)", "All I See"]
+            },
+            {
+                id: "the-playmaker",
+                title: "The Playmaker",
+                year: "2016",
+                category: "solo",
+                badge: "Multi-Platinum Classic",
+                accent: "from-amber-400/25 via-obsidian to-charcoal",
+                description: "Home to some of the biggest Nigerian songs in history, including 'Fada Fada', 'Connect', 'Pino Pino', and 'Financial Woman'.",
+                tracks: ["Connect", "Fada Fada (ft. Olamide)", "Pino Pino", "E Sure For Me", "Financial Woman (ft. P-Square)", "Ino Nma", "Abulo", "So Far So Good", "Mkpotu (ft. Zoro & Tidinz)", "Ochie Dike (ft. Onyeka Onwenu)"]
+            },
+            {
+                id: "2-kings",
+                title: "2 Kings (with Olamide)",
+                year: "2015",
+                category: "collab",
+                badge: "Historic Joint Album",
+                accent: "from-purple-500/25 via-obsidian to-charcoal",
+                description: "The legendary East-meets-West collaborative album uniting Igbo & Yoruba rap royalty on one historic body of work.",
+                tracks: ["Cypher", "Koba Koba", "Nobody's Fault", "Ladi (ft. Lil Kesh)", "God Be With Us", "Une", "Real Nigga", "Confession", "Carry Me Go (ft. Stormrex)", "For My City"]
+            },
+            {
+                id: "no-guts-no-glory",
+                title: "No Guts No Glory",
+                year: "2014",
+                category: "solo",
+                badge: "Debut Classic",
+                accent: "from-emerald-500/25 via-obsidian to-charcoal",
+                description: "The groundbreaking debut album that changed Nigerian hip-hop forever with 'Alobam', 'Ghost Mode', 'Man of the Year', and 'Parcel'.",
+                tracks: ["Alobam", "Man of the Year (Obago)", "Ghost Mode (ft. Olamide)", "Parcel", "O Set (ft. P-Square)", "Authe (ft. Flavour)", "Kush Music", "Aju (ft. Efya)", "Icholiya (ft. M.I & Ice Prince)", "Multiply (ft. Timaya & Mr Raw)"]
+            }
+        ];
+
+        // 3. WEB AUDIO API AFRO-RAP SYNTH ENGINE (Zero External MP3 Dependencies)
+        let audioCtx = null;
+        let isPlaying = false;
+        let currentTrackIndex = 0;
+        let stepInterval = null;
+        let stepCount = 0;
+
+        function initAudioEngine() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function triggerSynthStep(track) {
+            if (!audioCtx) return;
+            const now = audioCtx.currentTime;
+
+            // 808 Sub Kick on beats 0, 3, 6
+            if (stepCount % 8 === 0 || stepCount % 8 === 3 || stepCount % 8 === 6) {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(115, now);
+                osc.frequency.exponentialRampToValueAtTime(38, now + 0.18);
+                gain.gain.setValueAtTime(0.35, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.23);
+            }
+
+            // Crisp Rim/Snare on beat 4
+            if (stepCount % 4 === 2) {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(290, now);
+                gain.gain.setValueAtTime(0.14, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.09);
+            }
+
+            // Melodic Afro-Flute / Ogene Pluck
+            const noteFreq = track.notes[stepCount % track.notes.length];
+            const pluckOsc = audioCtx.createOscillator();
+            const pluckGain = audioCtx.createGain();
+            pluckOsc.type = 'sawtooth';
+            pluckOsc.frequency.setValueAtTime(noteFreq * 2, now);
+            pluckGain.gain.setValueAtTime(0.06, now);
+            pluckGain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+            pluckOsc.connect(pluckGain);
+            pluckGain.connect(audioCtx.destination);
+            pluckOsc.start(now);
+            pluckOsc.stop(now + 0.17);
+
+            stepCount++;
+        }
+
+        function togglePlayTrack(index) {
+            initAudioEngine();
+            if (currentTrackIndex === index && isPlaying) {
+                stopAudio();
+                return;
+            }
+            currentTrackIndex = index;
+            startAudio();
+        }
+
+        function toggleCurrentAudio() {
+            initAudioEngine();
+            if (isPlaying) {
+                stopAudio();
+            } else {
+                startAudio();
+            }
+        }
+
+        function startAudio() {
+            if (stepInterval) clearInterval(stepInterval);
+            isPlaying = true;
+            const track = featuredTracks[currentTrackIndex];
+            const stepMs = (60 / track.bpm / 2) * 1000;
+            triggerSynthStep(track);
+            stepInterval = setInterval(() => triggerSynthStep(track), stepMs);
+            updatePlayerUI();
+        }
+
+        function stopAudio() {
+            if (stepInterval) clearInterval(stepInterval);
+            isPlaying = false;
+            updatePlayerUI();
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % featuredTracks.length;
+            if (isPlaying) startAudio();
+            else updatePlayerUI();
+        }
+
+        function prevTrack() {
+            currentTrackIndex = (currentTrackIndex - 1 + featuredTracks.length) % featuredTracks.length;
+            if (isPlaying) startAudio();
+            else updatePlayerUI();
+        }
+
+        function updatePlayerUI() {
+            const track = featuredTracks[currentTrackIndex];
+            document.getElementById('now-playing-title').textContent = track.title;
+            document.getElementById('now-playing-album').textContent = `Phyno • ${track.album}`;
+            document.getElementById('bpm-badge').textContent = `${track.bpm} BPM`;
+
+            const bottomIcon = document.getElementById('bottom-play-icon');
+            const heroIcon = document.getElementById('hero-play-icon');
+            const discIcon = document.getElementById('player-disc-icon');
+            const heroCard = document.getElementById('hero-player-card');
+
+            if (isPlaying) {
+                bottomIcon.className = 'fa-solid fa-pause text-sm';
+                heroIcon.className = 'fa-solid fa-pause text-lg';
+                discIcon.classList.add('fa-spin');
+                heroCard.classList.add('playing');
+                document.getElementById('synth-status').textContent = 'Playing Live Beat';
+            } else {
+                bottomIcon.className = 'fa-solid fa-play text-sm';
+                heroIcon.className = 'fa-solid fa-play text-lg';
+                discIcon.classList.remove('fa-spin');
+                heroCard.classList.remove('playing');
+                document.getElementById('synth-status').textContent = 'Paused';
+            }
+
+            renderHeroTracklist();
+        }
+
+        // 4. RENDER HERO TRACKLIST & DISCOGRAPHY GRID
+        function renderHeroTracklist() {
+            const container = document.getElementById('hero-tracklist');
+            container.innerHTML = featuredTracks.map((t, idx) => {
+                const active = idx === currentTrackIndex;
+                return `
+                    <div onclick="togglePlayTrack(${idx})" class="cursor-pointer p-2.5 rounded-xl flex items-center justify-between transition ${active ? 'bg-gold/20 border border-gold/50' : 'hover:bg-white/5 border border-transparent'}">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <span class="w-6 h-6 rounded-lg ${active ? 'bg-gold text-obsidian' : 'bg-white/10 text-zinc-300'} flex items-center justify-center text-xs font-bold shrink-0">
+                                ${active && isPlaying ? '<i class="fa-solid fa-pause"></i>' : '<i class="fa-solid fa-play text-[10px]"></i>'}
+                            </span>
+                            <div class="truncate">
+                                <p class="text-xs font-bold ${active ? 'text-gold' : 'text-white'} truncate">${t.title}</p>
+                                <p class="text-[10px] text-zinc-400 truncate">${t.album}</p>
+                            </div>
+                        </div>
+                        <span class="text-[11px] font-mono text-zinc-400 ml-2">${t.duration}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderAlbums(filter = 'all') {
+            const grid = document.getElementById('albums-grid');
+            const filtered = filter === 'all' ? albumsData : albumsData.filter(a => a.category === filter);
+
+            grid.innerHTML = filtered.map((album, i) => `
+                <div class="glass-card glass-card-hover rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-52 rounded-2xl bg-gradient-to-br ${album.accent} border border-gold/30 p-6 flex flex-col justify-between relative overflow-hidden mb-5">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-1 rounded-md bg-obsidian/80 text-gold font-bold text-[10px] uppercase tracking-wider border border-gold/30">${album.badge}</span>
+                                <span class="font-display font-extrabold text-sm text-white">${album.year}</span>
+                            </div>
+                            <div class="my-auto text-center">
+                                <p class="text-[10px] tracking-[0.3em] text-gold uppercase font-bold">PHYNO • PENTHAUZE</p>
+                                <h3 class="font-royal font-black text-2xl text-white mt-1">${album.title}</h3>
+                            </div>
+                            <div class="flex items-center justify-between text-[11px] text-zinc-300">
+                                <span><i class="fa-solid fa-list-ul text-gold mr-1"></i>${album.tracks.length} Key Tracks</span>
+                                <span class="text-gold font-bold">Dolby Atmos</span>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-zinc-300 leading-relaxed mb-5">${album.description}</p>
+                    </div>
+
+                    <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+                        <button onclick="openAlbumModal('${album.id}')" class="flex-1 py-2.5 px-4 rounded-xl bg-gold-gradient text-obsidian font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition">
+                            View Tracklist
+                        </button>
+                        <button onclick="togglePlayTrack(${i % featuredTracks.length})" aria-label="Play Album Sample" class="w-10 h-10 rounded-xl glass-card text-gold hover:bg-gold hover:text-obsidian flex items-center justify-center transition">
+                            <i class="fa-solid fa-play text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterAlbums(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = 'filter-btn active px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-gold text-obsidian transition';
+                } else {
+                    btn.className = 'filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider glass-card text-zinc-300 hover:text-gold transition';
+                }
+            });
+            renderAlbums(category);
+        }
+
+        function openAlbumModal(albumId) {
+            const album = albumsData.find(a => a.id === albumId);
+            if (!album) return;
+            const content = document.getElementById('album-modal-content');
+            content.innerHTML = `
+                <div class="space-y-5">
+                    <div>
+                        <span class="px-2.5 py-1 rounded bg-gold/20 text-gold text-xs font-bold uppercase">${album.year} • ${album.badge}</span>
+                        <h3 class="font-royal font-black text-2xl sm:text-3xl text-white mt-2">${album.title}</h3>
+                        <p class="text-xs sm:text-sm text-zinc-300 mt-1">${album.description}</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold uppercase tracking-wider text-gold">Official Tracklist Highlights (Click to Preview Audio)</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            ${album.tracks.map((trackName, idx) => `
+                                <button onclick="playCustomSong('${trackName.replace(/'/g, "\\'")}', '${album.title.replace(/'/g, "\\'")}', ${idx})" class="p-3 rounded-xl bg-obsidian hover:border-gold/50 border border-white/10 flex items-center justify-between text-left transition group">
+                                    <div class="flex items-center space-x-2.5 truncate">
+                                        <span class="text-xs font-mono text-gold">${String(idx + 1).padStart(2, '0')}</span>
+                                        <span class="text-xs font-semibold text-white group-hover:text-gold truncate">${trackName}</span>
+                                    </div>
+                                    <i class="fa-solid fa-play text-[10px] text-zinc-500 group-hover:text-gold ml-2"></i>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                        <span class="text-xs text-zinc-400">Available on Spotify, Apple Music, Audiomack & Boomplay</span>
+                        <a href="https://open.spotify.com/artist/6acbdy69062359" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gold-gradient text-obsidian font-bold text-xs uppercase">
+                            Stream Full Album
+                        </a>
+                    </div>
+                </div>
+            `;
+            document.getElementById('album-modal').classList.remove('hidden');
+        }
+
+        function playCustomSong(songTitle, albumTitle, idx) {
+            currentTrackIndex = idx % featuredTracks.length;
+            startAudio();
+            document.getElementById('now-playing-title').textContent = songTitle;
+            document.getElementById('now-playing-album').textContent = `Phyno • ${albumTitle}`;
+            showToast(`Now previewing "${songTitle}" (${albumTitle})`);
+        }
+
+        function closeAlbumModal() {
+            document.getElementById('album-modal').classList.add('hidden');
+        }
+
+        // 5. MODALS, FORMS, AND CLIPBOARD HELPERS
+        function openHostingModal() {
+            document.getElementById('hosting-modal').classList.remove('hidden');
+        }
+        function closeHostingModal() {
+            document.getElementById('hosting-modal').classList.add('hidden');
+        }
+        function openEpkModal() {
+            document.getElementById('epk-modal').classList.remove('hidden');
+        }
+        function closeEpkModal() {
+            document.getElementById('epk-modal').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
+        }
+
+        function openTicketModal(eventName) {
+            const bookLocation = document.getElementById('book-location');
+            const bookMessage = document.getElementById('book-message');
+            if (bookLocation && bookMessage) {
+                bookLocation.value = eventName;
+                bookMessage.value = `Hello Penthauze Desk, I would like to reserve VIP Tables / Early Bird tickets for ${eventName}.`;
+            }
+            showToast(`Selected "${eventName}" — Complete VIP reservation below!`);
+            document.getElementById('bookings').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('rsvp-email').value;
+            showToast(`Ezege VIP Alert confirmed for ${email}!`);
+            e.target.reset();
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('book-name').value;
+            const type = document.getElementById('book-type').value;
+            showToast(`Thank you ${name}! Your ${type} inquiry has been logged for bookings@penthauze.com.`);
+            e.target.reset();
+        }
+
+        function copyText(text, msg) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(msg || 'Copied to clipboard!');
+            } catch (err) {
+                showToast('Copy ready!');
+            }
+            document.body.removeChild(textArea);
+        }
+
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('hidden');
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3800);
+        }
+
+        // 6. RESPONSIVE GOLD PARTICLE HERO CANVAS
+        function initHeroParticles() {
+            const canvas = document.getElementById('hero-particles');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            for (let i = 0; i < 42; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 2.2 + 0.6,
+                    dx: (Math.random() - 0.5) * 0.4,
+                    dy: -Math.random() * 0.5 - 0.15,
+                    alpha: Math.random() * 0.65 + 0.15
+                });
+            }
+
+            function drawParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
+                    ctx.fill();
+
+                    p.x += p.dx;
+                    p.y += p.dy;
+
+                    if (p.y < 0) p.y = canvas.height;
+                    if (p.x < 0) p.x = canvas.width;
+                    if (p.x > canvas.width) p.x = 0;
+                });
+                requestAnimationFrame(drawParticles);
+            }
+            drawParticles();
+        }
+
+        // Initialize on Window Load
+        window.onload = function () {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            renderHeroTracklist();
+            renderAlbums('all');
+            initHeroParticles();
+        };
+    </script>
+</body>
+</html>

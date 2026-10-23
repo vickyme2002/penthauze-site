@@ -36,7 +36,6 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
     }
-    /* Subtle Igbo Uli / Nsibidi inspired geometric background motif */
     .igbo-pattern {
       background-image: 
         radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
@@ -78,7 +77,6 @@
     .playing .eq-bar:nth-child(2) { animation: eqPulse 0.45s ease-in-out infinite 0.25s; }
     .playing .eq-bar:nth-child(3) { animation: eqPulse 0.65s ease-in-out infinite 0.05s; }
     .playing .eq-bar:nth-child(4) { animation: eqPulse 0.5s ease-in-out infinite 0.3s; }
-    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #09090b; }
     ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
@@ -87,21 +85,17 @@
 </head>
 <body class="igbo-pattern pb-28 selection:bg-gold selection:text-obsidian">
 
-  <!-- TOP ANNOUNCEMENT & DOMAIN HOSTING BANNER -->
+  <!-- TOP ANNOUNCEMENT BANNER -->
   <div class="bg-gradient-to-r from-obsidian via-zinc-900 to-obsidian border-b border-gold/25 px-4 py-2 text-xs text-zinc-300">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2">
         <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-        <span class="font-semibold text-gold tracking-wider uppercase">Official YouTube Audio & Video Active:</span>
+        <span class="font-semibold text-gold tracking-wider uppercase">Official YouTube Audio &amp; Video Active:</span>
         <span>Streaming directly from <strong>@PhynoFino</strong> &amp; <strong>@PhynoVEVO</strong></span>
       </div>
       <div class="flex items-center gap-3">
         <button onclick="toggleVideoDock()" class="text-gold hover:underline font-medium flex items-center gap-1">
-          <span>📺 Toggle Video Screen</span>
-        </button>
-        <span class="text-zinc-600">|</span>
-        <button onclick="openModal('hostingModal')" class="text-zinc-300 hover:text-gold font-medium transition">
-          🌐 Vercel + penthauze.com DNS Guide
+          <span>📺 Watch in Video Theater</span>
         </button>
       </div>
     </div>
@@ -170,7 +164,7 @@
               Stream "Beautiful" (Official)
             </button>
             <a href="#music" class="px-6 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold text-sm tracking-wide transition">
-              Explore Full Catalog (14 Tracks)
+              Explore Full Catalog (19 Tracks)
             </a>
           </div>
 
@@ -204,7 +198,7 @@
               </span>
             </div>
 
-            <!-- Spinning Vinyl + YouTube Thumbnail Preview -->
+            <!-- YouTube Thumbnail Preview -->
             <div class="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 mb-5 group">
               <img id="heroThumb" src="https://i.ytimg.com/vi/-i-zev10gbc/hqdefault.jpg" alt="Phyno Official Track Cover" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
@@ -219,7 +213,7 @@
                   <span id="heroSongAlbum" class="text-[10px] uppercase tracking-widest text-gold font-bold block">2026 Official Single</span>
                   <h3 id="heroSongTitle" class="font-syne font-bold text-xl text-white">Phyno - Beautiful</h3>
                 </div>
-                <a id="heroYtDirectLink" href="https://www.youtube.com/watch?v=-i-zev10gbc" target="_blank" rel="noopener" class="text-xs text-zinc-300 hover:text-gold underline flex items-center gap-1">
+                <a id="heroYtDirectLink" href="http://www.youtube.com/watch?v=-i-zev10gbc" target="_blank" rel="noopener" class="text-xs text-zinc-300 hover:text-gold underline flex items-center gap-1">
                   Watch on YouTube ↗
                 </a>
               </div>
@@ -249,7 +243,7 @@
         </div>
         <!-- Era Filter Buttons -->
         <div class="flex flex-wrap gap-2" id="eraFilters">
-          <button onclick="filterCatalog('all')" data-filter="all" class="era-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gold text-obsidian transition">All Hits (14)</button>
+          <button onclick="filterCatalog('all')" data-filter="all" class="era-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gold text-obsidian transition">All Hits (19)</button>
           <button onclick="filterCatalog('new')" data-filter="new" class="era-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 text-zinc-300 hover:bg-white/10 transition">2024–2026 Era</button>
           <button onclick="filterCatalog('do-i')" data-filter="do-i" class="era-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 text-zinc-300 hover:bg-white/10 transition">2021–2023 Era</button>
           <button onclick="filterCatalog('classics')" data-filter="classics" class="era-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 text-zinc-300 hover:bg-white/10 transition">Ezege Classics (2014–2020)</button>
@@ -280,7 +274,6 @@
         <!-- Main YouTube Player Stage -->
         <div class="lg:col-span-8 rounded-3xl overflow-hidden border border-gold/30 bg-black shadow-2xl">
           <div class="aspect-video w-full relative bg-black">
-            <!-- Actual YouTube IFrame API target -->
             <div id="ytPlayerContainer" class="w-full h-full"></div>
           </div>
           <div class="p-5 bg-zinc-950 flex flex-wrap items-center justify-between gap-4 border-t border-white/10">
@@ -291,7 +284,7 @@
               </div>
               <h3 id="stageTitle" class="font-syne font-bold text-xl text-white mt-1">Phyno - Beautiful (Official Video)</h3>
             </div>
-            <a id="stageYoutubeUrl" href="https://www.youtube.com/watch?v=-i-zev10gbc" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-white/10 hover:bg-gold hover:text-obsidian text-xs font-bold uppercase tracking-wider transition">
+            <a id="stageYoutubeUrl" href="http://www.youtube.com/watch?v=-i-zev10gbc" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-white/10 hover:bg-gold hover:text-obsidian text-xs font-bold uppercase tracking-wider transition">
               Open on YouTube.com ↗
             </a>
           </div>
@@ -301,7 +294,7 @@
         <div class="lg:col-span-4 rounded-3xl bg-obsidian border border-white/10 p-5">
           <h3 class="font-syne font-bold text-sm uppercase tracking-wider text-gold mb-4 flex items-center justify-between">
             <span>Up Next on Phyno TV</span>
-            <span class="text-xs text-zinc-400 font-normal">14 Official Videos</span>
+            <span class="text-xs text-zinc-400 font-normal">19 Official Videos</span>
           </h3>
           <div id="theaterQueue" class="space-y-2.5 max-h-[420px] overflow-y-auto pr-1">
             <!-- Populated by JS -->
@@ -483,12 +476,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div>
         <span class="font-cinzel font-bold text-white text-base tracking-widest">PENTHAUZE.COM</span>
-        <p class="mt-1">© 2026 Penthauze Music / Phyno (Ezege 1). All Audio &amp; Video streamed via Official YouTube API.</p>
+        <p class="mt-1">© 2026 Penthauze Music / Phyno (Ezege 1). All Rights Reserved.</p>
       </div>
       <div class="flex flex-wrap items-center gap-5">
         <a href="https://www.youtube.com/@PhynoFino" target="_blank" rel="noopener" class="hover:text-gold transition">YouTube (@PhynoFino)</a>
         <a href="https://www.youtube.com/user/PhynoVEVO" target="_blank" rel="noopener" class="hover:text-gold transition">PhynoVEVO</a>
-        <button onclick="openModal('hostingModal')" class="text-gold hover:underline font-semibold">Vercel DNS Guide</button>
       </div>
     </div>
   </footer>
@@ -511,7 +503,7 @@
           <div class="flex items-center gap-2 text-xs text-zinc-400 mt-0.5">
             <span id="playerBarAlbum" class="truncate">2026 Official Single</span>
             <span>•</span>
-            <a id="playerBarYtLink" href="https://www.youtube.com/watch?v=-i-zev10gbc" target="_blank" rel="noopener" class="text-gold hover:underline">YouTube ↗</a>
+            <a id="playerBarYtLink" href="http://www.youtube.com/watch?v=-i-zev10gbc" target="_blank" rel="noopener" class="text-gold hover:underline">YouTube ↗</a>
           </div>
         </div>
       </div>
@@ -545,32 +537,6 @@
     </div>
   </div>
 
-  <!-- MODAL: VERCEL + PENTHAUZE.COM DNS SETUP -->
-  <div id="hostingModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="bg-charcoal border border-gold/40 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
-      <button onclick="closeModal('hostingModal')" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-xl">✕</button>
-      <span class="text-xs uppercase tracking-widest text-gold font-bold">Zero-Cost Hosting Blueprint</span>
-      <h3 class="font-cinzel font-extrabold text-2xl text-white mt-1">Connect penthauze.com to Vercel</h3>
-      <p class="text-xs text-zinc-300 mt-2 leading-relaxed">
-        Add these two DNS records inside your domain registrar (where you bought <code class="text-gold">penthauze.com</code>) after importing your GitHub repository into Vercel:
-      </p>
-      <div class="mt-4 bg-obsidian rounded-2xl p-4 border border-white/10 text-xs font-mono space-y-2">
-        <div class="flex justify-between border-b border-white/10 pb-2 text-zinc-400">
-          <span>TYPE</span><span>HOST</span><span>VALUE / POINTS TO</span>
-        </div>
-        <div class="flex justify-between text-white py-1">
-          <span class="text-gold font-bold">A</span><span>@</span><span>76.76.21.21</span>
-        </div>
-        <div class="flex justify-between text-white py-1">
-          <span class="text-gold font-bold">CNAME</span><span>www</span><span>cname.vercel-dns.com</span>
-        </div>
-      </div>
-      <p class="text-xs text-zinc-400 mt-4">
-        Note: In Vercel under <strong>Settings → Domains</strong>, copy the exact project-specific CNAME string shown on your Vercel card if prompted. Free SSL activates automatically once verified.
-      </p>
-    </div>
-  </div>
-
   <!-- MODAL: TOUR RSVP -->
   <div id="rsvpModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-charcoal border border-gold/40 rounded-3xl max-w-md w-full p-6 sm:p-8 relative">
@@ -594,7 +560,6 @@
   <!-- YOUTUBE IFRAME API & OFFICIAL PHYNO CATALOG SCRIPT -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-    // 100% Official Phyno YouTube Tracks from PhynoFino & PhynoVEVO
     const phynoCatalog = [
       {
         id: 'beautiful',
@@ -812,7 +777,6 @@
     let isPlaying = false;
     let activeFilter = 'all';
 
-    // Initialize YouTube IFrame Player
     function onYouTubeIframeAPIReady() {
       ytPlayer = new YT.Player('ytPlayerContainer', {
         height: '100%',
@@ -905,20 +869,17 @@
       const track = phynoCatalog[currentTrackIndex];
       const thumbUrl = `https://i.ytimg.com/vi/${track.videoId}/hqdefault.jpg`;
 
-      // Update Hero Card
       document.getElementById('heroThumb').src = thumbUrl;
       document.getElementById('heroSongTitle').textContent = `Phyno - ${track.shortTitle}`;
       document.getElementById('heroSongAlbum').textContent = `${track.album} (${track.year})`;
       document.getElementById('heroChannelBadge').textContent = track.channel;
       document.getElementById('heroYtDirectLink').href = track.url;
 
-      // Update Video Stage
       document.getElementById('stageChannel').textContent = track.channel;
       document.getElementById('stageYear').textContent = `${track.album} • ${track.year}`;
       document.getElementById('stageTitle').textContent = track.title;
       document.getElementById('stageYoutubeUrl').href = track.url;
 
-      // Update Bottom Bar
       document.getElementById('playerBarThumb').src = thumbUrl;
       document.getElementById('playerBarTitle').textContent = `Phyno - ${track.shortTitle}`;
       document.getElementById('playerBarChannel').textContent = track.channel;
@@ -1047,7 +1008,6 @@
       e.target.reset();
     }
 
-    // Initial render
     window.addEventListener('DOMContentLoaded', () => {
       updateAllTrackDisplays();
     });
